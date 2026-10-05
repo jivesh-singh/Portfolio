@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Rivera | Senior Full-Stack & Cloud Systems Architect</title>
+  <meta name="description" content="Portfolio of Alex Rivera, Senior Full-Stack & Cloud Systems Architect specializing in distributed systems, high-performance web applications, and resilient cloud infrastructure.">
+  <meta name="keywords" content="Software Architect, Full-Stack Engineer, Distributed Systems, Cloud Infrastructure, Kubernetes, TypeScript, Go, React">
+  <meta name="author" content="Alex Rivera">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alex Rivera | Senior Full-Stack & Cloud Systems Architect">
+  <meta property="og:description" content="Crafting resilient software, elegant systems, and delightful digital experiences.">
+  <meta property="og:image" content="assets/nexus_cloud.jpg">
+
+  <!-- Favicon Monogram SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231B263B'/><text x='50%' y='65%' font-family='sans-serif' font-size='50' font-weight='bold' fill='%23E0E1DD' text-anchor='middle'>AR</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Light Effects & Constellation Canvas -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-gradient-top" aria-hidden="true"></div>
+  <div class="ambient-gradient-bottom" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Alex Rivera Portfolio Home">
+        <div class="brand-monogram">AR</div>
+        <div class="brand-info">
+          <span class="brand-name">Alex Rivera</span>
+          <span class="brand-role">SYS_ARCH // ENG</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#terminal" class="nav-link">CLI</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="status-indicator" title="Currently accepting select architectural consulting and leadership roles">
+          <span class="status-dot"></span>
+          <span>Available for Q4</span>
+        </div>
+        <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.1rem; font-size: 0.85rem;">Get in Touch</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <ul class="mobile-nav-links">
+      <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+      <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+      <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+      <li><a href="#terminal" class="mobile-nav-link">Terminal CLI</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- =======================================================================
+         HERO SECTION
+         ======================================================================= -->
+    <section class="hero-section section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Column: Copy & Actions -->
+          <div class="hero-content">
+            <div class="hero-badge-wrap">
+              <div class="hero-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>Based in San Francisco, CA &amp; Remote Worldwide</span>
+              </div>
+            </div>
+
+            <h1 class="hero-title">
+              Engineering Resilient Software &amp;
+              <span class="text-gradient">Distributed Systems</span><br>
+              as a <span class="typewriter-wrap" id="typewriter"></span>
+            </h1>
+
+            <p class="hero-subtitle">
+              6+ years bridging the frontier between bulletproof cloud infrastructure and fluid, hyper-responsive frontend experiences. Specialized in sub-second distributed microservices, AI orchestration, and high-frequency platforms.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary" id="heroExploreBtn">
+                <span>Explore Featured Work</span>
+                <svg class="arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#terminal" class="btn btn-secondary" id="heroTerminalBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                <span>Launch CLI Console</span>
+              </a>
+              <button class="btn btn-ghost" id="copyEmailBtn" title="Copy email to clipboard">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span>Copy Email</span>
+              </button>
+            </div>
+
+            <!-- Stats Ribbon -->
+            <div class="hero-stats-strip">
+              <div class="stat-item">
+                <span class="stat-number">6+</span>
+                <span class="stat-label">Years of Mastery</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">45+</span>
+                <span class="stat-label">Production Deploys</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">99.99%</span>
+                <span class="stat-label">Uptime Record</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">1.2M+</span>
+                <span class="stat-label">Active Users Served</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Visual Portrait & Floating Widgets -->
+          <div class="hero-visual">
+            <div class="hero-card-container">
+              <div class="avatar-wrapper">
+                <img src="assets/avatar.jpg" alt="Alex Rivera - Senior Full-Stack & Cloud Systems Architect" class="avatar-img" width="420" height="440" loading="eager">
+              </div>
+
+              <!-- Top Right Floating Pill -->
+              <div class="floating-glass-pill pill-top-right">
+                <div class="pill-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <div class="pill-content">
+                  <span class="pill-title">System Health</span>
+                  <span class="pill-value">100% Operational</span>
+                </div>
+              </div>
+
+              <!-- Bottom Left Floating Pill -->
+              <div class="floating-glass-pill pill-bottom-left">
+                <div class="pill-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="pill-content">
+                  <span class="pill-title">Core Focus</span>
+                  <span class="pill-value">Distributed Mesh &amp; AI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         ABOUT & ENGINEERING PHILOSOPHY
+         ======================================================================= -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Engineering Philosophy</span>
+          <h2 class="section-title">Architected for Scale, Designed for Humans</h2>
+          <p class="section-desc">Great software doesn't merely pass automated tests—it survives chaotic real-world scale while remaining delightfully intuitive to end users.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text-col">
+            <p>
+              I am an engineer and architect driven by building <strong>resilient distributed backends</strong>, scalable microservice architectures, and modern web applications with zero compromise on visual polish.
+            </p>
+            <p>
+              Over the past six years, I have spearheaded core infrastructure redesigns that cut multi-region cluster latencies by 40%, orchestrated mission-critical payment gateways handling tens of millions in monthly settlements, and pioneered autonomous AI agent workflows.
+            </p>
+            <p>
+              I believe in clean abstraction boundaries, deterministic deployments, observability-driven engineering, and giving teams the leverage to ship fast without breaking production.
+            </p>
+            <div style="margin-top: 2rem;">
+              <a href="#contact" class="btn btn-secondary">
+                <span>Read Full Resume &amp; Background</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="about-features-grid">
+            <div class="feature-box">
+              <div class="feature-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              </div>
+              <h3 class="feature-title">High-Concurrency Cloud</h3>
+              <p class="feature-desc">Building resilient containerized microservices and service meshes running smoothly on Kubernetes and AWS.</p>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
+              <h3 class="feature-title">Autonomous AI Agents</h3>
+              <p class="feature-desc">Synthesizing stateful LLM pipelines, semantic cache lookups, and vector databases for reliable automation.</p>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <h3 class="feature-title">Sub-Second Performance</h3>
+              <p class="feature-desc">Deep tuning across database indices, Redis caching layers, eBPF metrics, and rendering loops.</p>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 class="feature-title">Hardened Security</h3>
+              <p class="feature-desc">PCI-DSS compliance, zero-trust network policies, cryptographic hashing, and automated threat mitigations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         FEATURED PROJECTS SHOWCASE
+         ======================================================================= -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Selected Works</span>
+          <h2 class="section-title">High-Impact Systems &amp; Products</h2>
+          <p class="section-desc">A curated collection of production systems engineered for extreme throughput, operational resilience, and delightful developer experiences.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects (3)</button>
+          <button class="filter-btn" data-filter="cloud">Cloud &amp; Distributed</button>
+          <button class="filter-btn" data-filter="ai">AI &amp; Machine Learning</button>
+          <button class="filter-btn" data-filter="fullstack">Fintech &amp; Web Apps</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- Project 1: Nexus Cloud -->
+          <article class="project-card glass-card" data-category="cloud">
+            <div class="project-img-holder">
+              <img src="assets/nexus_cloud.jpg" alt="Nexus Cloud Distributed Infrastructure Dashboard" class="project-img" loading="lazy">
+              <span class="project-category-badge">Cloud Architecture</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Nexus Cloud Orchestrator</h3>
+              <p class="project-description">
+                Distributed multi-region infrastructure mesh and real-time observability orchestrator. Provides instant global topology visualization, automated failovers, and eBPF-driven performance tracing.
+              </p>
+              <div class="project-metrics">
+                <div class="metric-pill"><span>Latency:</span> &lt;2ms</div>
+                <div class="metric-pill"><span>Throughput:</span> 1.2B req/mo</div>
+                <div class="metric-pill"><span>Savings:</span> 38.5%</div>
+              </div>
+              <div class="project-tags">
+                <span class="tag">Go</span>
+                <span class="tag">Kubernetes</span>
+                <span class="tag">eBPF</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">TypeScript</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn btn-secondary" data-case-study="nexus" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                  <span>Deep Case Study</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </button>
+                <div style="display: flex; gap: 0.5rem;">
+                  <a href="#contact" class="btn btn-ghost" title="Inquire about system design" style="padding: 0.5rem;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: NeuroFlow AI -->
+          <article class="project-card glass-card" data-category="ai">
+            <div class="project-img-holder">
+              <img src="assets/neuroflow.jpg" alt="NeuroFlow Autonomous AI Agent Studio" class="project-img" loading="lazy">
+              <span class="project-category-badge">Autonomous AI</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">NeuroFlow AI Agent Studio</h3>
+              <p class="project-description">
+                Interactive node-based visual workflow canvas enabling product engineers to build, test, and orchestrate recursive AI agents with real-time token telemetry and stateful vector memory.
+              </p>
+              <div class="project-metrics">
+                <div class="metric-pill"><span>Pipelines:</span> 24k+</div>
+                <div class="metric-pill"><span>Token Save:</span> 42%</div>
+                <div class="metric-pill"><span>Rank:</span> #1 Product Hunt</div>
+              </div>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Next.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Redis</span>
+                <span class="tag">WebSockets</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn btn-secondary" data-case-study="neuroflow" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                  <span>Deep Case Study</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </button>
+                <div style="display: flex; gap: 0.5rem;">
+                  <a href="#contact" class="btn btn-ghost" title="Inquire about system design" style="padding: 0.5rem;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: VaultPay Gateway -->
+          <article class="project-card glass-card" data-category="fullstack">
+            <div class="project-img-holder">
+              <img src="assets/vaultpay.jpg" alt="VaultPay High-Frequency Fintech Platform" class="project-img" loading="lazy">
+              <span class="project-category-badge">Fintech &amp; Security</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">VaultPay Financial Engine</h3>
+              <p class="project-description">
+                Sub-100ms financial transaction orchestration gateway with real-time fraud mitigation heuristics, multi-acquirer smart routing, and PCI-DSS Level 1 compliant event logging.
+              </p>
+              <div class="project-metrics">
+                <div class="metric-pill"><span>Volume:</span> $45M+</div>
+                <div class="metric-pill"><span>Latency:</span> 95ms</div>
+                <div class="metric-pill"><span>Fraud Drop:</span> 0.04%</div>
+              </div>
+              <div class="project-tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Kafka</span>
+                <span class="tag">Docker</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">AWS KMS</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn btn-secondary" data-case-study="vaultpay" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                  <span>Deep Case Study</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </button>
+                <div style="display: flex; gap: 0.5rem;">
+                  <a href="#contact" class="btn btn-ghost" title="Inquire about system design" style="padding: 0.5rem;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study Interactive Modal -->
+    <div class="modal-overlay" id="caseStudyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="section-tag" id="modalTag">Architecture Case Study</span>
+            <h3 class="section-title" id="modalTitle" style="font-size: 1.6rem; margin-bottom: 0;">Case Study Details</h3>
+          </div>
+          <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">✕</button>
+        </div>
+        <div class="modal-body">
+          <h4>The Core Architectural Challenge</h4>
+          <p id="modalProblem"></p>
+
+          <h4>Engineering Solution &amp; Paradigm</h4>
+          <p id="modalSolution"></p>
+
+          <h4>Quantifiable Production Impact</h4>
+          <ul id="modalMetrics"></ul>
+
+          <h4>Primary Technology Stack</h4>
+          <div class="project-tags" id="modalStack" style="margin-top: 0.75rem;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         TECHNICAL SKILLS & MASTERY MATRIX
+         ======================================================================= -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Capabilities</span>
+          <h2 class="section-title">Technical Mastery &amp; Stack Matrix</h2>
+          <p class="section-desc">Extensive production experience spanning low-latency distributed runtimes, resilient cloud infrastructure, and modern responsive frontends.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Card 1: Frontend Engineering -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <h3 class="skill-cat-title">Frontend &amp; UX Systems</h3>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">TypeScript / JavaScript (ESNext)</span><span class="skill-level">98%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 98%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">React / Next.js Architecture</span><span class="skill-level">95%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">CSS Architecture &amp; Glassmorphism</span><span class="skill-level">96%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 96%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">HTML5 Canvas &amp; WebGL Visuals</span><span class="skill-level">88%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Card 2: Backend Architecture -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              </div>
+              <h3 class="skill-cat-title">Backend &amp; Distributed</h3>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Node.js &amp; Microservices</span><span class="skill-level">96%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 96%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Go &amp; High-Throughput APIs</span><span class="skill-level">90%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">GraphQL / gRPC / WebSockets</span><span class="skill-level">92%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Rust &amp; Systems Tooling</span><span class="skill-level">82%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 82%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Card 3: Cloud & DevOps -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+              </div>
+              <h3 class="skill-cat-title">Cloud Infrastructure</h3>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Kubernetes &amp; Docker</span><span class="skill-level">94%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 94%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Amazon Web Services (AWS)</span><span class="skill-level">92%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Terraform &amp; Infrastructure as Code</span><span class="skill-level">89%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 89%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">CI/CD Pipelines &amp; GitOps</span><span class="skill-level">95%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Card 4: Data & Storage -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <h3 class="skill-cat-title">Databases &amp; Streaming</h3>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">PostgreSQL &amp; Query Optimization</span><span class="skill-level">95%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Redis &amp; In-Memory Architecture</span><span class="skill-level">94%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 94%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Apache Kafka Event Streaming</span><span class="skill-level">87%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 87%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Vector DBs (Pinecone, pgvector)</span><span class="skill-level">89%</span></div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 89%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         CAREER & LEADERSHIP TIMELINE
+         ======================================================================= -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Track Record</span>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-desc">A progressive history of engineering leadership, technical ownership, and delivering mission-critical software at global scale.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Role 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Lead Systems Architect</h3>
+                <span class="timeline-period">2023 — Present</span>
+              </div>
+              <div class="timeline-company">AetherScale Technologies • San Francisco, CA</div>
+              <ul class="timeline-duties">
+                <li>Direct the core architecture for a multi-region cloud orchestrator processing 1.2B monthly requests across 1,400+ active Kubernetes nodes.</li>
+                <li>Pioneered adoption of eBPF network telemetry, reducing p99 service mesh latency by 42% and eliminating egress traffic bottlenecks.</li>
+                <li>Mentored 14 senior engineers across distributed systems, code quality reviews, and production on-call excellence.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Staff Software Engineer</h3>
+                <span class="timeline-period">2021 — 2023</span>
+              </div>
+              <div class="timeline-company">Quantex Financial Cloud • New York, NY (Remote)</div>
+              <ul class="timeline-duties">
+                <li>Architected high-frequency payment routing engine with Kafka and PostgreSQL, settling $45M+ in volume with zero data discrepancies.</li>
+                <li>Led PCI-DSS Level 1 compliance re-certification, designing an automated tokenization pipeline using AWS KMS.</li>
+                <li>Cut overall cloud compute expenditures by $22,000/month by re-architecting autoscale heuristics and optimizing memory allocations.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Senior Full-Stack Engineer</h3>
+                <span class="timeline-period">2019 — 2021</span>
+              </div>
+              <div class="timeline-company">Vortex Labs • Seattle, WA</div>
+              <ul class="timeline-duties">
+                <li>Engineered customer-facing real-time analytics web dashboards using TypeScript, React, WebSockets, and Node.js.</li>
+                <li>Reduced web application bundle sizes by 58% and boosted Google Core Web Vitals (LCP from 3.8s to 0.9s).</li>
+                <li>Established the engineering team's comprehensive CI/CD deployment pipelines using Docker and GitHub Actions.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         INTERACTIVE DEVELOPER TERMINAL / CLI PLAYGROUND
+         ======================================================================= -->
+    <section class="section terminal-section" id="terminal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Interactive CLI</span>
+          <h2 class="section-title">Developer Console</h2>
+          <p class="section-desc">Prefer the terminal? Type commands directly into the interactive shell to explore skills, projects, color themes, or secret Easter eggs.</p>
+        </div>
+
+        <div class="terminal-window">
+          <div class="terminal-bar">
+            <div class="terminal-dots">
+              <div class="t-dot t-red"></div>
+              <div class="t-dot t-yellow"></div>
+              <div class="t-dot t-green"></div>
+            </div>
+            <div class="terminal-title">alex@rivera-mbp: ~ (zsh) — v2.4.0</div>
+            <div style="width: 40px;"></div>
+          </div>
+
+          <div class="terminal-body" id="terminalOutput">
+            <div class="terminal-welcome">
+              Welcome to Alex Rivera's Interactive Console [Version 2.4.0-release]<br>
+              Type <strong style="color: #E0E1DD;">help</strong> to view all available commands or try <strong style="color: #E0E1DD;">sudo hire-alex</strong>.
+            </div>
+          </div>
+
+          <div class="terminal-input-row" style="padding: 0.75rem 1.5rem; background: #08101a; border-top: 1px solid var(--border-subtle);">
+            <span class="terminal-prompt-sym">➜ alex@portfolio:~$</span>
+            <input type="text" id="terminalInput" class="terminal-input" placeholder="Type a command (e.g. 'help', 'skills', 'projects', 'theme')..." autocomplete="off" spellcheck="false" aria-label="Terminal input prompt">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         TESTIMONIALS & ENDORSEMENTS
+         ======================================================================= -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Peer Endorsements</span>
+          <h2 class="section-title">What Engineering Leaders Say</h2>
+          <p class="section-desc">Feedback from VP of Engineering, Tech Leads, and collaborators who have worked alongside Alex.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card glass-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "Alex is the rare software architect who understands deep distributed systems plumbing down to kernel networking, while simultaneously possessing world-class frontend taste. A transformative hire for any engineering organization."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">SC</div>
+              <div>
+                <div class="author-name">Sarah Chen</div>
+                <div class="author-role">VP of Engineering, AetherScale</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card glass-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "When our payment system faced severe throughput constraints during Black Friday traffic, Alex re-architected our transaction ingestion engine in record time. Our error rate plummeted to near zero."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MK</div>
+              <div>
+                <div class="author-name">Marcus Kowalski</div>
+                <div class="author-role">Head of Infrastructure, Quantex</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card glass-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "Alex's attention to developer experience and code clarity elevated our whole engineering team. He consistently delivers production code that is clean, thoroughly tested, and built to last."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">EL</div>
+              <div>
+                <div class="author-name">Elena Rostova</div>
+                <div class="author-role">Principal Product Designer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         CONTACT & INQUIRY HUB
+         ======================================================================= -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Let's Connect</span>
+          <h2 class="section-title">Start a Conversation</h2>
+          <p class="section-desc">Interested in discussing an architectural challenge, consulting engagement, or leadership opportunity? I'd love to hear from you.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Direct Info Card -->
+          <div class="contact-info-card glass-card">
+            <div class="contact-highlight">
+              <h3>Direct Coordinates</h3>
+              <p>
+                Whether you need a senior technical lead, an infrastructure audit, or a custom full-stack system built from the ground up, send a transmission.
+              </p>
+            </div>
+
+            <div class="contact-methods">
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <div class="method-label">Direct Email</div>
+                  <div class="method-val">alex.rivera.dev@example.com</div>
+                </div>
+                <button class="copy-btn" id="copyEmailBtn2">Copy</button>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <div class="method-label">Location &amp; Remote</div>
+                  <div class="method-val">San Francisco, CA (PST / UTC-7)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="timezone-pill">
+              <span class="status-dot"></span>
+              <span>Local Time: <strong id="localTime" style="color: var(--c-platinum);">--:--</strong></span>
+              <span style="margin-left: auto;">⚡ Response &lt; 24h</span>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Contact Form -->
+          <div class="contact-form glass-card">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="senderName" class="form-label">Your Name</label>
+                <input type="text" id="senderName" class="form-input" placeholder="e.g. Jordan Miller" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderEmail" class="form-label">Email Address</label>
+                <input type="email" id="senderEmail" class="form-input" placeholder="e.g. jordan@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderSubject" class="form-label">Subject / Purpose</label>
+                <input type="text" id="senderSubject" class="form-input" placeholder="e.g. Staff Engineering Opportunity / Architecture Advisory">
+              </div>
+
+              <div class="form-group">
+                <label for="senderMessage" class="form-label">Message Details</label>
+                <textarea id="senderMessage" class="form-textarea" placeholder="Tell me about your project scope, timeline, and goals..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <span>Send Dispatch</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="nav-brand">
+          <div class="brand-monogram">AR</div>
+          <div class="brand-info">
+            <span class="brand-name">Alex Rivera</span>
+            <span class="brand-role">SYS_ARCH // ENG • Built with Clean Modern Web Standards</span>
+          </div>
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="GitHub Profile">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="LinkedIn Profile">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="Twitter / X Profile">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </a>
+          <a href="#hero" class="social-pill" aria-label="Back to Top" title="Back to Top">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Alex Rivera. Engineered with Coolors Palette (#0D1B2A, #1B263B, #415A77, #778DA9, #E0E1DD).</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--c-shadow-blue);">Latency: 14ms • All Systems Normal</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Execution -->
+  <script src="js/main.js"></script>
+</body>
+</html>
